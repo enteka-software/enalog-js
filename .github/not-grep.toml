@@ -1,4 +1,3 @@
 # The "exclude" checker will error if the specified value is included.
 [exclude]
-"src/**/*.ts" = "localhost"
-"src/**/*.ts" = "127.0.0.1"
+"src/**/*.ts" = ["localhost", "127.0.0.1"]
