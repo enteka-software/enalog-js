@@ -13,11 +13,11 @@ export async function pushEvent(apiToken: String, data: Event) {
   try {
 
     if (!apiToken) {
-      throw new Error('No api token provided')
+      return new Error('No api token provided')
     }
 
     if (!data) {
-      throw new Error('No data provided')
+      return new Error('No data provided')
     }
 
     const res = await fetch("http://127.0.0.1:3000/v1/events", {
@@ -30,16 +30,22 @@ export async function pushEvent(apiToken: String, data: Event) {
 
     })
 
-    if (res.status === 200) {
-      return res
-    }
-
     if (res.status !== 200) {
-      return Promise.reject(res)
+      return {
+        status: res.status,
+        message: "Error saving to Enalog",
+      }
+    }
+    return {
+      status: 200,
+      message: "Event succesfully sent to EnaLog"
     }
 
   } catch (error) {
-    return new Error("error:" + error);
+    return {
+      status: error.status,
+      message: "Error saving to Enalog"
+    }
   }
 
 }
