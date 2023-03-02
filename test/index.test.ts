@@ -4,12 +4,14 @@ import { describe, expect, test } from '@jest/globals';
 
 describe('pushEvent', () => {
     test('it returns an error if no api token is provided', () => {
-        let response = pushEvent('asodnfoasdnfosdafn', {
+        let response = pushEvent('', {
             project: 'Test Project',
             name: 'Test Name',
             description: 'Test Description',
             push: false
         });
+
+        console.log(response)
 
 
     })
