@@ -8,12 +8,13 @@ export type Event = {
   meta?: object;
 };
 
-export async function pushEvent(apiToken: String, data: Event) {
+export async function pushEvent(apiToken: String, data: Event): Promise<Object> {
 
   try {
 
     if (!apiToken) {
-      return new Error('No api token provided')
+
+      return new Error("No api key provided.")
     }
 
     if (!data) {
