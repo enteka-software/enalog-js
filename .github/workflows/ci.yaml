@@ -14,6 +14,7 @@ jobs:
           debug: true
   test:
     runs-on: ubuntu-latest
+    needs: localhost-check
     name: "Test"
     steps:
       - uses: actions/checkout@v3
