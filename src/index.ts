@@ -1,7 +1,7 @@
 export type Event = {
   project: string;
   name: string;
-  description: string;
+  description?: string;
   push: boolean;
   icon?: string;
   tags?: string[];
@@ -11,15 +11,6 @@ export type Event = {
 export async function pushEvent(apiToken: String, data: Event): Promise<Object> {
 
   try {
-
-    if (!apiToken) {
-
-      return new Error("No api key provided.")
-    }
-
-    if (!data) {
-      return new Error('No data provided')
-    }
 
     const res = await fetch("http://127.0.0.1:3000/v1/events", {
       method: "POST",

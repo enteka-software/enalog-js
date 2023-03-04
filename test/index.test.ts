@@ -10,45 +10,6 @@ describe('pushEvent', () => {
     beforeEach(() => {
         fetchMock.resetMocks()
     })
-    test('it returns an error if no api token is provided', async () => {
-        let response = await pushEvent('', {
-            project: 'Test Project',
-            name: 'Test Name',
-            description: 'Test Description',
-            push: false
-        });
-
-
-        // expect(response).toEqual({ Error: 'No api key provided.' })
-
-    })
-
-    test('it returns an error when no data is provided', async () => {
-        let response = await pushEvent('', {
-            project: '',
-            name: '',
-            description: '',
-            push: false
-        });
-
-
-    })
-
-    test('it returns an error when no name is provided in the data', () => {
-
-    })
-
-    test('it returns an error when no project is provided in the data', () => {
-
-    })
-
-    test('it returns an error when no description is provided', () => {
-
-    })
-
-    test('it returns an error when multiple keys are missing in the data object provided', () => {
-
-    })
 
     test('it returns a 200 when the post is successful', async () => {
         fetchMock.mockResponseOnce(JSON.stringify({
