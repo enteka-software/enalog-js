@@ -12,7 +12,7 @@ export async function pushEvent(apiToken: String, data: Event): Promise<Object> 
 
   try {
 
-    const res = await fetch("http://127.0.0.1:3000/v1/events", {
+    const res = await fetch("https://api.enalog.app/v1/events", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
