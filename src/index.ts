@@ -16,7 +16,7 @@ export async function pushEvent(apiToken: String, data: Event): Promise<Object> 
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer: ${apiToken}`,
+        Authorization: `Bearer ${apiToken}`,
       },
       body: JSON.stringify(data),
 
