@@ -12,7 +12,18 @@ jobs:
       - uses: mattsb42/not-grep@master
         with:
           debug: true
+  test:
+    runs-on: ubuntu-latest
+    name: "Test"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+      - run: npm ci
+      - run: npm run test
   build-and-public:
+    needs: test
     runs-on: ubuntu-latest
     name: "Build & Publish"
     steps:
