@@ -6,6 +6,7 @@ export type Event = {
   icon?: string;
   tags?: string[];
   meta?: object;
+  channels?: object;
 };
 
 export async function pushEvent(apiToken: String, data: Event): Promise<Object> {
