@@ -105,6 +105,7 @@ export class EnaLog {
 
       return false;
     } catch (error) {
+      console.log(error);
       console.log("Error getting evaluation from API. Returning false");
       return false;
     }
