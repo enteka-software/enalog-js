@@ -7,6 +7,7 @@ export type Event = {
   tags?: string[];
   meta?: object;
   channels?: object;
+  user_id?: string;
 };
 
 export async function pushEvent(
